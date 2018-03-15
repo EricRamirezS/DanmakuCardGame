@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+
+<StackPane id="background-pane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameSetup">
+   <Pane id="background-pane2" prefHeight="200.0" prefWidth="200.0" />
+   <StackPane id="content-pane" maxHeight="-Infinity" StackPane.alignment="CENTER">
+      <StackPane.margin>
+         <Insets left="40.0" right="40.0" />
+      </StackPane.margin>
+      <GridPane StackPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+         </rowConstraints>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="22.0" />
+         </padding>
+         <Label id="title-label" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" textAlignment="CENTER" GridPane.columnSpan="5">
+            <padding>
+               <Insets left="10.0" />
+            </padding>
+            <GridPane.margin>
+               <Insets left="-10.0" right="-10.0" />
+            </GridPane.margin>
+            <graphic>
+               <Text id="title-label-text" strokeType="OUTSIDE" strokeWidth="0.0" text="  Game Setup" />
+            </graphic>
+         </Label>
+         <Text id="item-text" strokeType="OUTSIDE" strokeWidth="0.0" text="N° of Players" GridPane.rowIndex="1" />
+         <Text id="item-text" strokeType="OUTSIDE" strokeWidth="0.0" text="Heroines" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <Text id="item-text" strokeType="OUTSIDE" strokeWidth="0.0" text="Partners" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         <Text id="item-text" strokeType="OUTSIDE" strokeWidth="0.0" text="Stage Bosses" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+         <Text id="item-text" strokeType="OUTSIDE" strokeWidth="0.0" text="Extra Bosses" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+         <ComboBox fx:id="cbPlayer" onAction="#playersChange" prefHeight="25.0" prefWidth="81.0" GridPane.rowIndex="2" />
+         <CheckBox id="1" fx:id="cxbHeroine" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Heroine" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="9" fx:id="cxbPartner1" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#partnerChange" text="Partner" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="3" fx:id="cxbStageBoss1" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#stageBossChange" selected="true" text="Stage Boss" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="8" fx:id="cxbRival" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Rival" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="10" fx:id="cxbPartner2" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#partnerChange" text="Partner" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="11" fx:id="cxvExMidboss" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#partnerChange" text="EX Midboss" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="12" fx:id="cxbOTP" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#partnerChange" text="One True Partner" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="4" fx:id="cxbStageBoss2" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#stageBossChange" selected="true" text="Stage Boss" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="5" fx:id="cxbStageBoss3" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#stageBossChange" text="Stage Boss" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="8" fx:id="cxbFinalBoss" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#stageBossChange" text="Final Boss" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="7" fx:id="cxbChallenger" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#stageBossChange" text="Challenger" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox id="6" fx:id="cxbAntiHeroine" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#stageBossChange" text="Anti-Heroine" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <CheckBox fx:id="cxbLE" allowIndeterminate="true" disable="true" indeterminate="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#leChange" text="Lunatic Extra" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+            <tooltip>
+               <Tooltip anchorLocation="WINDOW_TOP_LEFT" anchorX="0.0" anchorY="0.0" autoFix="false" consumeAutoHidingEvents="false" hideOnEscape="false" maxWidth="200.0" text="Unsupported yet" wrapText="true" x="0.0" y="0.0" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox fx:id="cxbRandomRoles" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#randomRoleChange" selected="true" text="Random Roles" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="5">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+            <tooltip>
+               <Tooltip anchorLocation="WINDOW_TOP_LEFT" autoFix="false" consumeAutoHidingEvents="false" hideOnEscape="false" maxWidth="200.0" text="Select the roles randomly when starting the game." wrapText="true" />
+            </tooltip>
+         </CheckBox>
+         <CheckBox fx:id="cxbBanLilyWhite" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Ban Lily White" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="6">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+            <tooltip>
+               <Tooltip anchorLocation="WINDOW_TOP_LEFT" autoFix="false" consumeAutoHidingEvents="false" hideOnEscape="false" maxWidth="200.0" text="Removes Lily White from the Incident Deck" wrapText="true" />
+            </tooltip>
+         </CheckBox>
+         <RadioButton id="13" fx:id="rbExBoss" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="EX Boss" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+            <toggleGroup>
+               <ToggleGroup fx:id="exBossButtonGroup" />
+            </toggleGroup>
+         </RadioButton>
+         <RadioButton id="15" fx:id="rbPhantasmBoss" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Phantasm Boss" toggleGroup="$exBossButtonGroup" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </RadioButton>
+         <RadioButton id="17" fx:id="rbSecretBoss" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Secret Boss" toggleGroup="$exBossButtonGroup" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+            <tooltip>
+               <Tooltip anchorLocation="WINDOW_BOTTOM_RIGHT" autoFix="false" consumeAutoHidingEvents="false" hideOnEscape="false" text="Empty Tooltip" />
+            </tooltip>
+         </RadioButton>
+         <RadioButton id="19" fx:id="rbLoneWolf" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Lone Wolf" toggleGroup="$exBossButtonGroup" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </RadioButton>
+         <CheckBox allowIndeterminate="true" disable="true" indeterminate="true" mnemonicParsing="false" text="Turn Zero" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+            <tooltip>
+               <Tooltip anchorLocation="WINDOW_TOP_LEFT" autoFix="false" consumeAutoHidingEvents="false" hideOnEscape="false" maxWidth="200.0" text="Unsupported yet" />
+            </tooltip>
+            <GridPane.margin>
+               <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+         </CheckBox>
+         <Button mnemonicParsing="false" onAction="#goBack" GridPane.halignment="RIGHT" GridPane.rowIndex="14" GridPane.valignment="TOP">
+            <GridPane.margin>
+               <Insets bottom="25.0" top="10.0" />
+            </GridPane.margin>
+            <graphic>
+               <Label text="Go back" />
+            </graphic>
+         </Button>
+         <Button fx:id="btnStart" mnemonicParsing="false" onAction="#startGame" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="14" GridPane.valignment="TOP">
+            <GridPane.margin>
+               <Insets bottom="25.0" top="10.0" />
+            </GridPane.margin>
+            <graphic>
+               <Label text="Start" />
+            </graphic>
+         </Button>
+         <Label id="title-label" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" textAlignment="CENTER" GridPane.columnSpan="5" GridPane.rowIndex="9">
+            <padding>
+               <Insets left="10.0" />
+            </padding>
+            <graphic>
+               <Text id="title-label-text" strokeType="OUTSIDE" strokeWidth="0.0" text="  Game Mode" />
+            </graphic>
+            <GridPane.margin>
+               <Insets left="-10.0" right="-10.0" />
+            </GridPane.margin>
+         </Label>
+         <HBox alignment="CENTER_LEFT" spacing="15.0" GridPane.columnSpan="5" GridPane.rowIndex="10">
+            <children>
+               <RadioButton fx:id="standartGameRB" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Standart">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+                  <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+                  <toggleGroup>
+                     <ToggleGroup fx:id="gameModeButtonGroup" />
+                  </toggleGroup>
+               </RadioButton>
+               <RadioButton fx:id="playersChoiceRB" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Player's Choice" toggleGroup="$gameModeButtonGroup">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+                  <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+                  <tooltip>
+                     <Tooltip anchorLocation="WINDOW_TOP_RIGHT" autoFix="false" consumeAutoHidingEvents="false" hideOnEscape="false" maxWidth="200.0" text="When choosing Character cards or recruiting Extra Characters, players can choose between three cards instead of two. If you have enough Character cards, you can increase this to four, or even more!" wrapText="true" />
+                  </tooltip>
+               </RadioButton>
+               <RadioButton fx:id="doubleThreatRB" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Double Threat" toggleGroup="$gameModeButtonGroup">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+                  <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+               </RadioButton>
+               <RadioButton fx:id="characterDraftRB" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Character Draft" toggleGroup="$gameModeButtonGroup">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+                  <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+               </RadioButton>
+            </children>
+         </HBox>
+         <Spinner fx:id="playerChoiceSpinner" cache="true" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="12" GridPane.vgrow="NEVER" />
+         <Text id="item-text" fx:id="textPlayerChoice" strokeType="OUTSIDE" strokeWidth="0.0" text="Characters to Deal " GridPane.halignment="RIGHT" GridPane.rowIndex="12" />
+      </GridPane>
+   </StackPane>
+</StackPane>

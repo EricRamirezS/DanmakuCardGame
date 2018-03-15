@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'JBarrett';
+    src: local('JBARRETT.ttf');
+}
+
+@font-face {
+    font-family: 'Danmaku';
+    src: local('MPlantin_Danmaku.ttf');
+}
+
+.radio-button {
+    -fx-background-color: #D9E1F0;
+    -fx-background-size: 100% auto;
+    -fx-text-fill: #333333;
+    -fx-font-family: "Danmaku";
+    -fx-cursor: hand;
+    -fx-font-size: 20;
+    -fx-background-radius: 15 15 15 15;
+    -fx-border-color: #D9E1F0;
+    -fx-border-width: 4;
+    -fx-border-radius: 15;
+}
+
+.radio-button:selected {
+    -fx-background-color: #91A0D0;
+    -fx-background-size: 100% auto;
+    -fx-background-radius: 15 15 15 15;
+    -fx-cursor: hand;
+    -fx-border-color: #91A0D0;
+    -fx-border-width: 4;
+    -fx-border-radius: 15;
+
+}
+
+.radio-button:hover {
+    -fx-background-color: #BDC6E3;
+    -fx-background-size: 100% auto;
+    -fx-cursor: hand;
+    -fx-background-radius: 15 15 15 15;
+    -fx-border-color: #BDC6E3;
+    -fx-border-width: 4;
+    -fx-border-radius: 15;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/image/interface/yin_yang.png");
+    -fx-background-size: stretch;
+    -fx-background-repeat: stretch;
+    -fx-padding: 15;
+    -fx-cursor: hand;
+}
+
+.radio-button .radio,
+.radio-button .radio:selected {
+    -fx-background-color: transparent;
+    -fx-padding: -5 -5 -5 -1;
+    -fx-cursor: hand;
+}

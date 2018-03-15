@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<fx:root minHeight="20.0" minWidth="20.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: transparent;" type="GridPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="12.0" valignment="TOP" />
+        <RowConstraints percentHeight="44.0" />
+        <RowConstraints percentHeight="44.0" />
+    </rowConstraints>
+    <StackPane minHeight="10.0" prefHeight="10.0" GridPane.rowSpan="3">
+        <Pane fx:id="posPane" minHeight="10.0" prefHeight="10.0" StackPane.alignment="TOP_CENTER" />
+        <Pane fx:id="posExitPane" minHeight="10.0" prefHeight="10.0" StackPane.alignment="BOTTOM_CENTER" />
+    </StackPane>
+    <HBox alignment="TOP_CENTER" minHeight="10.0" prefHeight="10.0" style="-fx-background-color: rgba(0,0,0,0.70);" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP">
+        <AnchorPane minHeight="10.0" prefHeight="10.0" HBox.hgrow="ALWAYS">
+            <Label fx:id="lblLife" alignment="CENTER" ellipsisString="" text="Label" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            </Label>
+        </AnchorPane>
+        <AnchorPane minHeight="10.0" prefHeight="10.0" HBox.hgrow="ALWAYS">
+            <Label fx:id="lblDanmaku" alignment="CENTER" ellipsisString="" text="Label" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            </Label>
+        </AnchorPane>
+        <AnchorPane minHeight="10.0" prefHeight="10.0" HBox.hgrow="ALWAYS">
+            <Label fx:id="lblRange" alignment="CENTER" ellipsisString="" text="Label" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            </Label>
+        </AnchorPane>
+        <AnchorPane minHeight="10.0" prefHeight="10.0" HBox.hgrow="ALWAYS">
+            <Label fx:id="lblDistance" alignment="CENTER" ellipsisString="" text="Label" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_ELLIPSIS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            </Label>
+        </AnchorPane>
+        <AnchorPane minHeight="10.0" prefHeight="10.0" HBox.hgrow="ALWAYS">
+            <Label fx:id="lblSpellcard" alignment="CENTER" ellipsisString="" text="Label" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            </Label>
+        </AnchorPane>
+    </HBox>
+    <HBox fx:id="topHBox" minHeight="10.0" prefHeight="10.0" spacing="1.0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+        <ImageView fx:id="paneRole" cache="true" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER" />
+        <GridPane id="card-in-hand-area" fx:id="gridHand" alignment="TOP_RIGHT" minHeight="10.0" prefHeight="10.0" HBox.hgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+    </HBox>
+    <HBox fx:id="bottomHBox" minHeight="10.0" prefHeight="10.0" spacing="1.0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+        <ImageView fx:id="paneCharacter" fitHeight="1.0" fitWidth="1.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER" />
+        <GridPane id="extra-character-card-area" fx:id="gridExtraCharacter" minHeight="10.0" prefHeight="10.0" HBox.hgrow="NEVER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="25.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="25.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="25.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="25.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <ImageView fx:id="extraAbility1" fitHeight="1.0" fitWidth="1.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="extraAbility2" fitHeight="1.0" fitWidth="1.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+            <ImageView fx:id="extraRole" fitHeight="1.0" fitWidth="1.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+            <ImageView fx:id="extraItem" fitHeight="1.0" fitWidth="1.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" />
+        </GridPane>
+        <GridPane id="item-card-area" fx:id="gridItem" minHeight="10.0" prefHeight="10.0" HBox.hgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints fillWidth="false" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+    </HBox>
+</fx:root>

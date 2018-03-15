@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'JBarrett';
+    src: local('JBARRETT.ttf');
+}
+
+@font-face {
+    font-family: 'Danmaku';
+    src: local('MPlantin_Danmaku.ttf');
+}
+
+/* ***********MENU*********** */
+#root {
+    -fx-background-color: #6176BB;
+}
+
+#background-pane {
+    -fx-background-image: url("/image/interface/tile.png");
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-border-width: 0 4 0 2;
+    -fx-border-color: #50433D;
+}
+
+#background-pane2 {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 7 0 7;
+    -fx-border-color: #B3C4E1;
+}
+
+#full-width-button {
+    -fx-background-color: #7C8FD6;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-radius: 0px;
+    -fx-padding: 5 0 10 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px;
+}
+
+#full-width-button:hover {
+    -fx-background-color: #B3C4E1;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+
+}
+
+#full-width-button:pressed {
+    -fx-background-color: #6176BB;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+#full-width-button-label {
+    -fx-fill: #F8F7F5;
+    -fx-effect: dropshadow(gaussian, #50433D, 0, 0, 2, 2);
+}
+
+#content-pane {
+    -fx-background-color: #F8F7F5;
+    -fx-background-radius: 24;
+    -fx-border-color: #B3C4E1;
+    -fx-border-width: 4px;
+    -fx-border-radius: 20;
+}
+
+#item-pane {
+    -fx-background-color: #D9E1F0;
+    -fx-background-radius: 10;
+}
+
+#item-text {
+    -fx-fill: #6176BB;
+    -fx-font-size: 20;
+}
+
+#title-label {
+    -fx-background-color: #7C8FD6;
+}
+
+#title-label-text {
+    -fx-font-weight: bold;
+    -fx-fill: #F8F7F5;
+    -fx-font-size: 25;
+    -fx-effect: dropshadow(gaussian, #50433D, 0, 0, 2, 2);
+}
+
+/* ***********GAME*********** */
+/* PLAYER BOARD */
+#item-card-area {
+    -fx-background-color: rgba(237,24,27,0.5);
+    -fx-background-image: url("/image/board/board_item.png");
+    -fx-background-size: auto 85%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#extra-character-card-area {
+    -fx-background-color: rgba(193,150,204,0.5);
+    -fx-background-image: url("/image/board/board_extra_character.png");
+    -fx-background-size: 100% 25%;
+}
+
+#card-in-hand-area {
+    -fx-background-color: rgba(124,143,214,0.5);
+    -fx-background-image: url("/image/board/board_hand.png");
+    -fx-background-size: auto 85%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+/* TABLE */
+#table-root {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/image/table/tile.png");
+    -fx-background-position: center;
+}
+
+#deck-pane {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/image/table/main_deck.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#discard-deck-pane {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/image/table/main_discard.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#le-deck-pane {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/image/table/lunatic_deck.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#le-discard-deck-pane {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/image/table/lunatic_discard.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#incident-deck-pane {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/image/table/incident_deck.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#past-incident-pane {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/image/table/past_incidents.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#current-incident-pane {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/image/table/current_incident.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#incident-collection-pane {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/image/table/incident_collection.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}

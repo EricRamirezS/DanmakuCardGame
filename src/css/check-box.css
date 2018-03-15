@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'JBarrett';
+    src: local('JBARRETT.ttf');
+}
+
+@font-face {
+    font-family: 'Danmaku';
+    src: local('MPlantin_Danmaku.ttf');
+}
+
+.check-box {
+    -fx-background-color: #D9E1F0;
+    -fx-background-size: 100% auto;
+    -fx-text-fill: #333333;
+    -fx-cursor: hand;
+    -fx-font-family: "Danmaku";
+    -fx-font-size: 20;
+    -fx-background-radius: 15 15 15 15;
+    -fx-border-color: #D9E1F0;
+    -fx-border-width: 4;
+    -fx-border-radius: 15;
+}
+
+.check-box:selected {
+    -fx-background-color: #91A0D0;
+    -fx-background-size: 100% auto;
+    -fx-cursor: hand;
+    -fx-background-radius: 15 15 15 15;
+    -fx-border-color: #91A0D0;
+    -fx-border-width: 4;
+    -fx-border-radius: 15;
+
+}
+
+.check-box:hover {
+    -fx-background-color: #BDC6E3;
+    -fx-background-size: 100% auto;
+    -fx-cursor: hand;
+    -fx-background-radius: 15 15 15 15;
+    -fx-border-color: #BDC6E3;
+    -fx-border-width: 4;
+    -fx-border-radius: 15;
+}
+
+.check-box .box {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.check-box:selected .box {
+    -fx-background-image: url("/image/interface/yin_yang.png");
+    -fx-background-size: stretch;
+    -fx-background-repeat: stretch;
+    -fx-cursor: hand;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.check-box.mark,
+.check-box:selected .mark {
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+}
