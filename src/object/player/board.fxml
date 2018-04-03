@@ -20,8 +20,8 @@
         <RowConstraints percentHeight="44.0" />
     </rowConstraints>
     <StackPane minHeight="10.0" prefHeight="10.0" GridPane.rowSpan="3">
-        <Pane fx:id="posPane" minHeight="10.0" prefHeight="10.0" StackPane.alignment="TOP_CENTER" />
-        <Pane fx:id="posExitPane" minHeight="10.0" prefHeight="10.0" StackPane.alignment="BOTTOM_CENTER" />
+        <Pane fx:id="posPane" maxHeight="1.0" maxWidth="1.0" minHeight="1.0" minWidth="1.0" prefHeight="1.0" prefWidth="1.0" StackPane.alignment="TOP_CENTER" />
+        <Pane fx:id="posExitPane" maxHeight="1.0" maxWidth="1.0" minHeight="1.0" minWidth="1.0" prefHeight="1.0" prefWidth="1.0" StackPane.alignment="BOTTOM_CENTER" />
     </StackPane>
     <HBox alignment="TOP_CENTER" minHeight="10.0" prefHeight="10.0" style="-fx-background-color: rgba(0,0,0,0.70);" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP">
         <AnchorPane minHeight="10.0" prefHeight="10.0" HBox.hgrow="ALWAYS">

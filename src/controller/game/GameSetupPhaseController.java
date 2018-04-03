@@ -24,6 +24,7 @@ import java.util.List;
  */
 public class GameSetupPhaseController {
 
+	private volatile boolean done = true;
 	private GameController gameController;
 
 	GameSetupPhaseController(GameController gc) {
@@ -239,15 +240,16 @@ public class GameSetupPhaseController {
 		return true;
 	}
 
-	void drawStartingHand(){
+	void drawStartingHand() {
 		List<Player> players = gameController.getTurnController().getPlayersByTurn();
-		drawCards(players,0);
+		drawCards(players, 0);
 	}
 
-	private void drawCards(@NotNull List<Player> players, int i ){
-		if (i >= players.size()){
-			//TODO
+	private void drawCards(@NotNull List<Player> players, int i) {
+		if (i >= players.size()) {
+			startOfTheTurnEffect();
 		} else {
+			done = false;
 			Timeline tl = gameController.getAnimationController().getDrawCardAnimation(gameController.getTableController().getMainDeckGroup(), players.get(i));
 			tl.setOnFinished(e -> {
 				if (players.get(i).getMaxHandSize() > players.get(i).getHand().size()) {
@@ -260,11 +262,30 @@ public class GameSetupPhaseController {
 		}
 	}
 
-	boolean checkStartingHandDone(){
-		for (Player player: GameController.getPlayers()) {
-			if (player.getHand().size()!=player.getMaxHandSize())
-				return false;
+	void startOfTheTurnEffect() {
+		/* TODO Start of the turn effects only applies for Lunatic Extra Characters
+		for (Player player : gameController.getTurnController().getPlayersByTurn()) {
+			switch (player.getCharacterCard().getID()) {
+				case CharacterCard.FUTATSUIWA_MAMIZOU: //Mamizou
+					break;
+				case CharacterCard.HOUJUU_NUE: //Nue
+					break;
+				case CharacterCard.KIJIN_SEIJA: //Seija
+					break;
+				case CharacterCard.YAKUMO_RAN: //Ran
+			}
 		}
-		return true;
+		 */
+		turnZero();
+	}
+
+	void turnZero() {
+		//TODO turn Zero
+
+		heroineFirstTurn();
+	}
+
+	void heroineFirstTurn() {
+		gameController.getPhaseControlller().start();
 	}
 }

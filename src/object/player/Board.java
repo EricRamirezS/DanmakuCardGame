@@ -64,7 +64,6 @@ public class Board extends GridPane {
 
 	@FXML
 	void initialize() {
-		setTranslateZ(-150);
 		player.getHand().addListener((ListChangeListener<Card>) c -> {
 			while (c.next()) {
 				if (c.wasAdded()) {
@@ -217,7 +216,7 @@ public class Board extends GridPane {
 			ColumnConstraints col = new ColumnConstraints();
 			grid.getColumnConstraints().add(col);
 
-			CardImage cardPane = card.getCardImage();
+			CardImage cardPane = card.getMainCardImage();
 			cardPane.fitHeightProperty().bind(heightProperty().divide(100D / 44));
 			Pane pane = new Pane();
 
@@ -227,8 +226,8 @@ public class Board extends GridPane {
 
 			col.setFillWidth(false);
 			col.setPercentWidth(100 / (nOfCards + 2) * (i == nOfCards ? 3 : 1));
-			col.setHgrow(Priority.NEVER);
-			col.setHalignment(i > 0 ? HPos.RIGHT : HPos.LEFT);
+			col.setHgrow(Priority.SOMETIMES);
+			col.setHalignment(HPos.LEFT);
 		}
 	}
 

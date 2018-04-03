@@ -37,7 +37,6 @@ class AnimationController {
 		card.setTranslateY(deckPos.y);
 
 		gameController.getParent().getChildren().add(card);
-
 		KeyValue keyPosX0 = new KeyValue(card.translateXProperty(),deckPos.x);
 		KeyValue keyPosY0 = new KeyValue(card.translateYProperty(),deckPos.y);
 		KeyValue keyRot0 = new KeyValue(card.rotateProperty(),deck.getRotate());
@@ -48,8 +47,8 @@ class AnimationController {
 		KeyValue keyPosY2 = new KeyValue(card.translateYProperty(),playerBackPos.y);
 
 		KeyFrame kf0 = new KeyFrame(Duration.ZERO, keyPosX0, keyPosY0, keyRot0);
-		KeyFrame kf1 = new KeyFrame(Duration.millis(500), keyPosX1, keyPosY1, keyRot1);
-		KeyFrame kf2 = new KeyFrame(Duration.millis(750), keyPosX2, keyPosY2);
+		KeyFrame kf1 = new KeyFrame(Duration.millis(125), keyPosX1, keyPosY1, keyRot1);
+		KeyFrame kf2 = new KeyFrame(Duration.millis(250), keyPosX2, keyPosY2);
 
 		Timeline tl = new Timeline(kf0,kf1,kf2);
 
@@ -63,7 +62,7 @@ class AnimationController {
 
 		return new Timeline(
 				new KeyFrame(Duration.ZERO, event -> tl.play()),
-				new KeyFrame(Duration.millis(1000))
+				new KeyFrame(Duration.millis(375))
 		);
 	}
 }

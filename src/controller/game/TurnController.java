@@ -14,6 +14,7 @@ import java.util.List;
 class TurnController {
 
 	private GameController gameController;
+	private int currentTurn = 0;
 
 	/**
 	 * The first element of this list is always the
@@ -48,5 +49,46 @@ class TurnController {
 
 	List<Player> getPlayersByTurn() {
 		return playersByTurn;
+	}
+
+	/**
+	 * Get the Player who is playing the current turn.
+	 * @return The player who's playing this turn.
+	 */
+	Player getCurrentPlayer(){
+		return playersByTurn.get(currentTurn);
+	}
+
+	/**
+	 * Get the Player who is played the previous turn.
+	 * @return The player who's played the previous turn.
+	 */
+	Player getLastPlater(){
+		if (currentTurn-1>=0){
+			return playersByTurn.get(currentTurn-1);
+		} else {
+			return playersByTurn.get(playersByTurn.size()-1);
+		}
+	}
+
+	/**
+	 * Get the Player who will play the next turn.
+	 * @return The player who will play the next turn.
+	 */
+	Player getNextPlayer(){
+		if (currentTurn+1<=playersByTurn.size()){
+			return playersByTurn.get(currentTurn+1);
+		} else {
+			return playersByTurn.get(0);
+		}
+	}
+
+	/**
+	 * Moves the turn to the next Player
+	 */
+	void nextTurn(){
+		if (currentTurn++>=playersByTurn.size()){
+			currentTurn=0;
+		}
 	}
 }

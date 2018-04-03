@@ -275,4 +275,8 @@ public class GameController {
 	AnimationController getAnimationController() {
 		return animationController;
 	}
+
+	public PhaseController getPhaseControlller() {
+		return phaseControlller;
+	}
 }

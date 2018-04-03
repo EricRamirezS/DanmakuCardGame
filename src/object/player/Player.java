@@ -6,10 +6,7 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
-import object.card.Card;
-import object.card.CharacterCard;
-import object.card.Deck;
-import object.card.RoleCard;
+import object.card.*;
 import object.scene.Pos;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -214,161 +211,164 @@ public abstract class Player {
 	//region private Methods
 	private void calculateBonus() {
 		if (characterCard.getValue() != null) {
-			int dl = 1;
-			int r = 1;
-			int db = 0;
-			int mh = 4;
+			int dl = 1; //danmaku limit
+			int r = 1;  //range
+			int db = 0; //distance bonus
+			int mh = 4; //max hand
 			if (itemsAvailable.get()) {
 				for (Card card : items) {
 					switch (card.getType()) {
 						case DECK:
 							switch (card.getID()) {
-								case 10:
+								case DeckCard.FOCUS_1:
 									db += 2;
 									break;
-								case 11:
+								case DeckCard.FOCUS_2:
 									db += 2;
 									break;
-								case 33:
+								case DeckCard.MINI_HACKKERO:
 									r += 3;
 									break;
-								case 35:
+								case DeckCard.POWER_1:
 									r += 1;
 									dl += 1;
 									break;
-								case 36:
+								case DeckCard.POWER_2:
 									r += 1;
 									dl += 1;
 									break;
-								case 37:
+								case DeckCard.POWER_3:
 									r += 1;
 									dl += 1;
 									break;
-								case 38:
+								case DeckCard.POWER_4:
 									r += 1;
 									dl += 1;
 									break;
-								case 39:
+								case DeckCard.POWER_5:
 									r += 1;
 									dl += 1;
 									break;
-								case 40:
+								case DeckCard.POWER_6:
 									r += 1;
 									dl += 1;
 									break;
-								case 69:
+								case DeckCard.SORCERERS_SUTRA_SCROLL:
 									mh = 7;
 									break;
-								case 76:
+								case DeckCard.STOPWATCH:
 									db += 1;
 									dl += 2;
 									break;
-								case 90:
+								case DeckCard.NIMBLE_CLOTH_1:
 									db += 1;
 									break;
-								case 91:
+								case DeckCard.NIMBLE_CLOTH_2:
 									db += 1;
 							}
 							break;
 						case LE:
 							switch (card.getID()) {
-								case 9:
+								case LunaticExtraCard.FOCUS:
 									db += 2;
 									break;
-								case 10:
+								case LunaticExtraCard.FULL_POWER:
 									r += 3;
 									dl += 3;
 									break;
-								case 17:
+								case LunaticExtraCard.JEWELED_PAGODA:
 									r += 1;
 									break;
 							}
 					}
 				}
 			}
-			mh = characterCard.get().getID() == 17 && abilityAvailable.get() && characterCard.get().isAbilityAvailable() ? 7 : mh;
 			for (CharacterCard card : extraCharacterCards) {
 				if (card.isAbilityAvailable() && abilityAvailable.get()) {
 					int ID = card.getID();
-					if (card.getID() == 37 && card.getCopyingCharacter() == null) {
+					if (card.getID() == CharacterCard.KOMEIJI_KOISHI && card.getCopyingCharacter() == null) {
 						ID = card.getCopyingCharacter().getID();
 					}
 					switch (ID) {
-						case 2:
+						case CharacterCard.CIRNO:
 							r += 2;
 							break;
-						case 7:
+						case CharacterCard.IBUKI_SUIKA:
 							r += 1;
 							dl += 1;
 							break;
-						case 8:
+						case CharacterCard.IZAYOI_SAKUYA:
 							dl += 2;
 							break;
-						case 10:
+						case CharacterCard.KAWASHIRO_NITORI:
 							db += 1;
 							break;
-						case 17:
+						case CharacterCard.PATCHOULI_KNOWLEDGE:
 							mh = 7;
 							break;
-						case 28:
+						case CharacterCard.HECATIA_LAPISLAZULI:
 							if (life.get() == maxLife.get()) dl += 2;
 							else if (life.get() > 1) r += 2;
 							else db += 2;
 							break;
-						case 33:
+						case CharacterCard.JUNKO:
 							dl += 1;
-						case 43:
+						case CharacterCard.MORIYA_SUWAKO:
 							db += 1;
-						case 48:
+						case CharacterCard.YASAKA_KANAKO:
 							r += 1;
 					}
 				}
 			}
 			if (abilityAvailable.get()) {
 				int ID = characterCard.get().getID();
-				if (characterCard.get().getID() == 37 && characterCard.get().getCopyingCharacter() == null) {
+				if (characterCard.get().getID() == CharacterCard.KOMEIJI_KOISHI && characterCard.get().getCopyingCharacter() == null) {
 					ID = characterCard.get().getCopyingCharacter().getID();
 				}
 				switch (ID) {
-					case 2:
+					case CharacterCard.CIRNO:
 						r += 2;
 						break;
-					case 7:
+					case CharacterCard.IBUKI_SUIKA:
 						r += 1;
 						dl += 1;
 						break;
-					case 8:
+					case CharacterCard.IZAYOI_SAKUYA:
 						dl += 2;
 						break;
-					case 10:
+					case CharacterCard.KAWASHIRO_NITORI:
 						db += 1;
 						break;
-					case 17:
+					case CharacterCard.PATCHOULI_KNOWLEDGE:
 						mh = 7;
 						break;
-					case 28:
+					case CharacterCard.HECATIA_LAPISLAZULI:
 						if (life.get() == maxLife.get()) dl += 2;
 						else if (life.get() > 1) r += 2;
 						else db += 2;
 						break;
-					case 33:
+					case CharacterCard.JUNKO:
 						dl += 1;
-					case 43:
+					case CharacterCard.MORIYA_SUWAKO:
 						db += 1;
-					case 48:
+					case CharacterCard.YASAKA_KANAKO:
 						r += 1;
 				}
 			}
-			mh = roleCard.get().getID() == 1 || roleCard.get().getID() == 14 ? mh + 1 : mh;
+			mh = roleCard.get().getID() == RoleCard.HEROINE ||
+					roleCard.get().getID() == RoleCard.EX_BOSS_REVEALED ?
+					mh + 1 : mh;
+
 			danmakuLimitProperty().set(dl);
 			maxHandSize.set(mh);
 			range.set(r);
 			distanceBonus.set(db);
-			maxLife.set(roleCard.get().getID() == 1 ||
-					roleCard.get().getID() == 14 ||
-					roleCard.get().getID() == 16 ||
-					roleCard.get().getID() == 18 ||
-					roleCard.get().getID() == 20
+
+			maxLife.set(roleCard.get().getID() == RoleCard.HEROINE ||
+					roleCard.get().getID() == RoleCard.EX_BOSS_REVEALED ||
+					roleCard.get().getID() == RoleCard.TRUE_PHANTASM_BOSS ||
+					roleCard.get().getID() == RoleCard.SECRET_BOSS_DISCOVERED ||
+					roleCard.get().getID() == RoleCard.TAG_TEAM
 					? 5 : 4);
 		}
 	}

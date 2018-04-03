@@ -16,4 +16,17 @@ public class PhaseController {
 	}
 
 	enum Step {START_OF_THE_TURN_PHASE, INCIDENT_PHASE, MAIN_PHASE, DISCARD_PHASE, END_OF_THE_TURN_PHASE}
+
+	void start(){
+		Step currentStep = Step.START_OF_THE_TURN_PHASE;
+		startOfTheTurnPhaseManager();
+	}
+
+	private void startOfTheTurnPhaseManager() {
+
+		incidentStepManager();
+	}
+
+	private void incidentStepManager() {
+	}
 }

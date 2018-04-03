@@ -69,6 +69,7 @@ public class TableController {
 			centerGrid.getColumnConstraints().remove(colLE);
 			centerGrid.getChildren().removeAll(leDeckPane, leDiscardDeckPane);
 		}
+		centerGrid.getColumnConstraints().get(centerGrid.getColumnConstraints().size()-1).minWidthProperty().bind(centerGrid.widthProperty().divide(3));
 		colCurrentIncident.minWidthProperty().bind(centerGrid.widthProperty().divide(centerGrid.getColumnConstraints().size()));
 	}
 

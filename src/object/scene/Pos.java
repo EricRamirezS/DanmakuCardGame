@@ -28,4 +28,12 @@ public class Pos {
 		this.x=x;
 		this.y=y;
 	}
+
+	@Override
+	public String toString() {
+		return "Pos{" +
+				"x=" + x +
+				", y=" + y +
+				'}';
+	}
 }

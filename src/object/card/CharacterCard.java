@@ -14,6 +14,59 @@ import org.jetbrains.annotations.NotNull;
  */
 public final class CharacterCard extends Card {
 
+	public static final int //region ID
+			//BASE
+			ALICE_MARGATROID = 1,
+			CIRNO = 2,
+			HAKUREI_REIMU = 3,
+			HIJIRI_BYAKUREN = 4,
+			HINANAWI_TENSHI = 5,
+			HONG_MEILING = 6,
+			IBUKI_SUIKA = 7,
+			IZAYOI_SAKUYA = 8,
+			KAMISHIRASAWA_KEINE = 9,
+			KAWASHIRO_NITORI = 10,
+			KAZAMI_YUUKA = 11,
+			KIRISAME_MARISA = 12,
+			KOCHIYA_SANAE = 13,
+			KOMEIJI_SATORI = 14,
+			KONPAKU_YOUMU = 15,
+			MONONOBE_NO_FUTO = 16,
+			PATCHOULI_KNOWLEDGE = 17,
+			REISEN_UDONGEIN_INABA = 18,
+			REIUJI_UTSUHO = 19,
+			REMILIA_SCARLET = 20,
+			SHAMEIMARU_AYA = 21,
+			TOYOSATOMIMI_NO_MIKO = 22,
+			YAKOGORO_EIRIN = 23,
+			YAKUMO_YUKARI = 24,
+
+			//LUNATIC EXTRA
+			FLANDRE_SCARLET = 25,
+			FUJIWARA_NO_MOKOU = 26,
+			FUTATSUIWA_MAMIZOU = 27,
+			HECATIA_LAPISLAZULI = 28,
+			HORIKAWA_RAIKO = 29,
+			HOSHIGUMA_YUUGI = 30,
+			HOUJUU_NUE = 31,
+			HOUWAISAN_KAGUYA = 32,
+			JUNKO = 33,
+			KAENBYOU_RIN = 34,
+			KIJIN_SEIJA = 35,
+			HATA_NO_KOKORO = 36,
+			KOMEIJI_KOISHI = 37,
+			KUMOI_ICHIRIN = 38,
+			NAGAE_IKU = 39,
+			ONOZUKA_KOMACHI = 40,
+			SAIGYOUJI_YUYUKO = 41,
+			SHIKIEIKI_YAMAXANADU = 42,
+			MORIYA_SUWAKO = 43,
+			TATARA_KOGASA = 44,
+			TORAMARU_SHOU = 45,
+			USAMI_SUMIREKO = 46,
+			YAKUMO_RAN = 47,
+			YASAKA_KANAKO = 48; //endregion
+
 	private final boolean spellCardAvailable;
 	private final boolean abilityAvailable;
 	private final ObjectProperty<CharacterCard> copyingCharacter = new SimpleObjectProperty<>(null);
