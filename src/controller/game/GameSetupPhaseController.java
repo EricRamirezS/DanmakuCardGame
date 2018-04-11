@@ -247,7 +247,7 @@ public class GameSetupPhaseController {
 
 	private void drawCards(@NotNull List<Player> players, int i) {
 		if (i >= players.size()) {
-			startOfTheTurnEffect();
+			startOfTheGameEffect();
 		} else {
 			done = false;
 			Timeline tl = gameController.getAnimationController().getDrawCardAnimation(gameController.getTableController().getMainDeckGroup(), players.get(i));
@@ -262,8 +262,8 @@ public class GameSetupPhaseController {
 		}
 	}
 
-	void startOfTheTurnEffect() {
-		/* TODO Start of the turn effects only applies for Lunatic Extra Characters
+	void startOfTheGameEffect() {
+		/* TODO Start of the game effects only applies for Lunatic Extra Characters
 		for (Player player : gameController.getTurnController().getPlayersByTurn()) {
 			switch (player.getCharacterCard().getID()) {
 				case CharacterCard.FUTATSUIWA_MAMIZOU: //Mamizou

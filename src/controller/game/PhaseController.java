@@ -1,5 +1,7 @@
 package controller.game;
 
+import object.card.IncidentCard;
+
 /**
  * DanmakuCG
  * <p>
@@ -18,15 +20,19 @@ public class PhaseController {
 	enum Step {START_OF_THE_TURN_PHASE, INCIDENT_PHASE, MAIN_PHASE, DISCARD_PHASE, END_OF_THE_TURN_PHASE}
 
 	void start(){
-		Step currentStep = Step.START_OF_THE_TURN_PHASE;
 		startOfTheTurnPhaseManager();
 	}
 
 	private void startOfTheTurnPhaseManager() {
-
+		Step currentStep = Step.START_OF_THE_TURN_PHASE;
+		//TODO Start of the turn effects
 		incidentStepManager();
 	}
 
 	private void incidentStepManager() {
+		Step currentStep = Step.INCIDENT_PHASE;
+		if (gameController.getCurrentIncidentsList().size() == 0) {
+			IncidentCard incidentCard = (IncidentCard) gameController.getTableController().getIncidentDeckGroup().getTopCard();
+		}
 	}
 }

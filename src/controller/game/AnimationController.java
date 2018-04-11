@@ -65,4 +65,14 @@ class AnimationController {
 				new KeyFrame(Duration.millis(375))
 		);
 	}
+
+	Timeline getRevealIncidentAnimation(Deck deck) {
+
+		Pos DeckPos = new Pos(deck);
+		Timeline tl = new Timeline();
+		return new Timeline(
+				new KeyFrame(Duration.ZERO, event -> tl.play()),
+				new KeyFrame(Duration.millis(0))
+		);
+	}
 }
