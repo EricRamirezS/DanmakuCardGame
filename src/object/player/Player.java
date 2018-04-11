@@ -226,7 +226,7 @@ public abstract class Player {
 								case DeckCard.FOCUS_2:
 									db += 2;
 									break;
-								case DeckCard.MINI_HACKKERO:
+								case DeckCard.MINI_HAKKERO:
 									r += 3;
 									break;
 								case DeckCard.POWER_1:
