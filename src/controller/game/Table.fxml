@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-
+<?import javafx.scene.layout.*?>
 <GridPane id="table-root" fx:id="mainGrid" minHeight="480.0" minWidth="640.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints halignment="LEFT" percentWidth="16.66666666" />
@@ -21,14 +18,15 @@
     </rowConstraints>
     <GridPane fx:id="centerGrid" minHeight="10.0" minWidth="10.0" style="-fx-background-color: rgba(0,32,00,0.5);" translateZ="-1.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="TOP">
         <columnConstraints>
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
-            <ColumnConstraints fx:id="colLE" halignment="CENTER" hgrow="SOMETIMES" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
-            <ColumnConstraints fx:id="colCurrentIncident" halignment="CENTER" hgrow="SOMETIMES" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"/>
+            <ColumnConstraints fx:id="colLE" halignment="CENTER" hgrow="ALWAYS"/>
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"/>
+            <ColumnConstraints fx:id="colCurrentIncident" halignment="CENTER" hgrow="ALWAYS"/>
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints percentHeight="50.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-            <RowConstraints percentHeight="50.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints percentHeight="49.5" valignment="BOTTOM" vgrow="SOMETIMES"/>
+            <RowConstraints percentHeight="1.0" valignment="BOTTOM" vgrow="SOMETIMES"/>
+            <RowConstraints percentHeight="49.5" valignment="BOTTOM" vgrow="SOMETIMES"/>
         </rowConstraints>
       <GridPane id="deck-pane" fx:id="deckPane" alignment="TOP_CENTER" minHeight="10.0" minWidth="10.0" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
          <rowConstraints>
@@ -51,21 +49,27 @@
           <columnConstraints>
               <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
           </columnConstraints></GridPane>
-      <GridPane id="discard-deck-pane" fx:id="deckDiscardPane" alignment="TOP_CENTER" minHeight="10.0" minWidth="10.0" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+        <GridPane id="discard-deck-pane" fx:id="deckDiscardPane" alignment="TOP_CENTER" minHeight="10.0" minWidth="10.0"
+                  GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2"
+                  GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
           <rowConstraints>
               <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
           </rowConstraints>
           <columnConstraints>
               <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
           </columnConstraints></GridPane>
-      <GridPane id="le-discard-deck-pane" fx:id="leDiscardDeckPane" alignment="TOP_CENTER" minHeight="10.0" minWidth="10.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+        <GridPane id="le-discard-deck-pane" fx:id="leDiscardDeckPane" alignment="TOP_CENTER" minHeight="10.0"
+                  minWidth="10.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES"
+                  GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
           <rowConstraints>
               <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
           </rowConstraints>
           <columnConstraints>
               <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
           </columnConstraints></GridPane>
-      <GridPane id="past-incident-pane" fx:id="pastIncidentPane" alignment="TOP_CENTER" minHeight="10.0" minWidth="10.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+        <GridPane id="past-incident-pane" fx:id="pastIncidentPane" alignment="TOP_CENTER" minHeight="10.0"
+                  minWidth="10.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES"
+                  GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
           <rowConstraints>
               <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
           </rowConstraints>

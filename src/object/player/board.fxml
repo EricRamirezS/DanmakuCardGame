@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <fx:root minHeight="20.0" minWidth="20.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: transparent;" type="GridPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints hgrow="ALWAYS" />
@@ -45,17 +38,6 @@
             </Label>
         </AnchorPane>
     </HBox>
-    <HBox fx:id="topHBox" minHeight="10.0" prefHeight="10.0" spacing="1.0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
-        <ImageView fx:id="paneRole" cache="true" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER" />
-        <GridPane id="card-in-hand-area" fx:id="gridHand" alignment="TOP_RIGHT" minHeight="10.0" prefHeight="10.0" HBox.hgrow="ALWAYS">
-            <columnConstraints>
-                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints vgrow="SOMETIMES" />
-            </rowConstraints>
-        </GridPane>
-    </HBox>
     <HBox fx:id="bottomHBox" minHeight="10.0" prefHeight="10.0" spacing="1.0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
         <ImageView fx:id="paneCharacter" fitHeight="1.0" fitWidth="1.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER" />
         <GridPane id="extra-character-card-area" fx:id="gridExtraCharacter" minHeight="10.0" prefHeight="10.0" HBox.hgrow="NEVER">
@@ -81,5 +63,22 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
         </GridPane>
+    </HBox>
+    <HBox fx:id="topHBox" minHeight="10.0" prefHeight="10.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+        <children>
+            <ImageView fx:id="paneRole" cache="true" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS"/>
+            <HBox fx:id="handHBox" alignment="TOP_CENTER" minHeight="10.0" prefHeight="10.0" spacing="1.0"
+                  HBox.hgrow="SOMETIMES">
+                <GridPane id="card-in-hand-area" fx:id="gridHand" alignment="TOP_RIGHT" minHeight="10.0"
+                          prefHeight="10.0" HBox.hgrow="NEVER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                </GridPane>
+            </HBox>
+        </children>
     </HBox>
 </fx:root>
