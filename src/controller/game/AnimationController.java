@@ -67,9 +67,10 @@ class AnimationController {
         );
     }
 
-    Timeline getRevealIncidentAnimation(Deck deck) {
+    Timeline getFlipCardAnimation(Deck deck, Deck discardPile) {
 
         Pos DeckPos = new Pos(deck);
+        Pos discardPos = new Pos(discardPile);
         Timeline tl = new Timeline();
         return new Timeline(
                 new KeyFrame(Duration.ZERO, event -> tl.play()),
