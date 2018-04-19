@@ -31,9 +31,6 @@ public class Pos {
 
 	@Override
 	public String toString() {
-		return "Pos{" +
-				"x=" + x +
-				", y=" + y +
-				'}';
+        return "Pos{ " + x + 'x' + y + " }";
 	}
 }

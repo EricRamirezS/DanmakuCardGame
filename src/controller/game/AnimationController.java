@@ -61,10 +61,7 @@ class AnimationController {
             player.drawCard(cardObject);
         });
 
-        return new Timeline(
-                new KeyFrame(Duration.ZERO, event -> tl.play()),
-                new KeyFrame(Duration.millis(375))
-        );
+        return generateReturnable(tl);
     }
 
     Timeline getFlipCardAnimation(Deck deck, Deck discardPile) {
@@ -72,9 +69,23 @@ class AnimationController {
         Pos DeckPos = new Pos(deck);
         Pos discardPos = new Pos(discardPile);
         Timeline tl = new Timeline();
+        return generateReturnable(tl);
+    }
+
+    Timeline getRevealNewIncidentAnimation() {
+
+        Pos IncidentDeckPos = new Pos(gameController.getTableController().getIncidentDeckGroup());
+
+
+        Timeline tl = new Timeline();
+
+        return generateReturnable(tl);
+    }
+
+    private Timeline generateReturnable(Timeline tl) {
         return new Timeline(
                 new KeyFrame(Duration.ZERO, event -> tl.play()),
-                new KeyFrame(Duration.millis(0))
+                new KeyFrame(tl.getTotalDuration().add(Duration.millis(125)))
         );
     }
 }

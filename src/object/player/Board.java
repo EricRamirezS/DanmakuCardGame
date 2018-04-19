@@ -7,10 +7,7 @@ import javafx.geometry.HPos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import object.card.Card;
 import object.card.CardImage;
@@ -218,7 +215,7 @@ public class Board extends GridPane {
         int i = 0;
         for (Card card : cards) {
             ColumnConstraints col = new ColumnConstraints();
-            grid.getColumnConstraints().add(col);
+
 
             CardImage cardPane = card.getMainCardImage();
             cardPane.fitHeightProperty().bind(heightProperty().divide(100D / 44));
@@ -226,18 +223,21 @@ public class Board extends GridPane {
 
             pane.getChildren().add(cardPane);
             grid.getChildren().add(pane);
-            GridPane.setColumnIndex(pane, i++);
-            col.setMinWidth(1);
             col.setFillWidth(false);
-            col.maxWidthProperty().bind(handHBox.widthProperty().divide(nOfCards + 1D));
+            //col.setMinWidth(1);
             //col.setPercentWidth(100D / (nOfCards /*+ 2)  * (i == nOfCards ? 3 : 1)*/));
-            if (i < ((nOfCards + 1) / 2D)) {
+            if (i == 0) {
+                col.setHalignment(nOfCards == 1 ? HPos.CENTER : HPos.RIGHT);
+                col.setHgrow(Priority.SOMETIMES);
+            } else if (i == nOfCards - 1) {
                 col.setHalignment(HPos.LEFT);
-            } else if (i == ((nOfCards + 1) / 2D)) {
-                col.setHalignment(HPos.CENTER);
+                col.setHgrow(Priority.SOMETIMES);
             } else {
-                col.setHalignment(HPos.RIGHT);
+                col.setHalignment(HPos.CENTER);
+                col.setHgrow(Priority.NEVER);
             }
+            grid.getColumnConstraints().add(col);
+            GridPane.setColumnIndex(pane, i++);
         }
     }
 

@@ -39,7 +39,8 @@ public class Deck extends Group {
 		deckCards = cards;
 		prefHeight(10);
 		prefWidth(10);
-		deckCards.addListener((ListChangeListener<Card>) c -> {
+
+        deckCards.addListener((ListChangeListener<Card>) c -> {
 			while (c.next()) {
 				if (c.wasAdded()) {
 					for (Card card : c.getAddedSubList()) {

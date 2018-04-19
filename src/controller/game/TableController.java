@@ -45,6 +45,7 @@ public class TableController {
     private Deck leDiscardPileGroup;
     private Deck incidentDeckGroup;
     private Deck pastIncidentPileGroup;
+    private Deck currentIncidentDeck;
 
     TableController(GameController gameController) {
         this.gameController = gameController;
@@ -64,15 +65,16 @@ public class TableController {
         setDeck(leDiscardPileGroup, leDiscardDeckPane);
         setDeck(incidentDeckGroup, incidentDeckPane);
         setDeck(pastIncidentPileGroup, pastIncidentPane);
+        
 
         if (!gameController.isLunaticExtra()) {
             centerGrid.getColumnConstraints().remove(colLE);
             centerGrid.getChildren().removeAll(leDeckPane, leDiscardDeckPane);
-            activeIncidentGridPane.minWidthProperty().bind(centerGrid.widthProperty().divide(3));
+
         } else {
-            activeIncidentGridPane.minWidthProperty().bind(centerGrid.widthProperty().divide(4));
+            colCurrentIncident.minWidthProperty().bind(centerGrid.widthProperty().divide(4));
         }
-        centerGrid.getColumnConstraints().get(centerGrid.getColumnConstraints().size() - 1).minWidthProperty().bind(centerGrid.widthProperty().divide(3));
+        //centerGrid.getColumnConstraints().get(centerGrid.getColumnConstraints().size() - 1).minWidthProperty().bind(centerGrid.widthProperty().divide(3));
         //colCurrentIncident.minWidthProperty().bind(centerGrid.widthProperty().divide(centerGrid.getColumnConstraints().size()));
     }
 
@@ -412,5 +414,9 @@ public class TableController {
 
     public Deck getPastIncidentPileGroup() {
         return pastIncidentPileGroup;
+    }
+
+    private void orderCurrentIncidents() {
+
     }
 }

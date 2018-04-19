@@ -67,12 +67,12 @@
     <HBox fx:id="topHBox" minHeight="10.0" prefHeight="10.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
         <children>
             <ImageView fx:id="paneRole" cache="true" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS"/>
-            <HBox fx:id="handHBox" alignment="TOP_CENTER" minHeight="10.0" prefHeight="10.0" spacing="1.0"
-                  HBox.hgrow="SOMETIMES">
-                <GridPane id="card-in-hand-area" fx:id="gridHand" alignment="TOP_RIGHT" minHeight="10.0"
-                          prefHeight="10.0" HBox.hgrow="NEVER">
+            <HBox fx:id="handHBox" alignment="CENTER" minHeight="10.0" prefHeight="10.0" HBox.hgrow="SOMETIMES">
+                <HBox minHeight="10.0" minWidth="10.0"/>
+                <GridPane id="card-in-hand-area" fx:id="gridHand" alignment="TOP_RIGHT" gridLinesVisible="true"
+                          minHeight="10.0" prefHeight="10.0" HBox.hgrow="ALWAYS">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0"/>
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="10.0"/>
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints vgrow="SOMETIMES"/>

@@ -37,6 +37,8 @@ public final class CardImage extends ImageView {
 	private boolean faceUp = false;
 	private Card card;
 
+    //public static CardImage generateBlankCard(){}
+
 	/**
 	 * @param card      the Card that this Card image represents
 	 * @param focusable Zoom the card if user is pressing ALT
