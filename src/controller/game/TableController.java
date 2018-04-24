@@ -65,7 +65,7 @@ public class TableController {
         setDeck(leDiscardPileGroup, leDiscardDeckPane);
         setDeck(incidentDeckGroup, incidentDeckPane);
         setDeck(pastIncidentPileGroup, pastIncidentPane);
-        
+
 
         if (!gameController.isLunaticExtra()) {
             centerGrid.getColumnConstraints().remove(colLE);

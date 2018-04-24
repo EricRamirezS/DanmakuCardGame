@@ -43,7 +43,7 @@ public final class CardImage extends ImageView {
 	 * @param card      the Card that this Card image represents
 	 * @param focusable Zoom the card if user is pressing ALT
 	 */
-	CardImage(@NotNull Card card, boolean focusable) {
+    CardImage(Card card, boolean focusable) {
 		super();
 		this.card = card;
 		setPreserveRatio(true);
@@ -51,29 +51,34 @@ public final class CardImage extends ImageView {
 		setFitHeight(10);
 		setFitWidth(0);
 
-		faceUpImage = new Image("/image/" + card.getType().toString().toLowerCase() + "/" + card.getID() + ".png");
-		setFace();
-		if (card.getMainCardImage() != null) {
-			setFaceUp(card.getMainCardImage().isFaceUp());
-		}
-		setRotationAxis(Rotate.Y_AXIS);
-		if (focusable) {
-			setZoomToNode(this);
-		}
-		if (card instanceof RoleCard) {
-			if (card.getID() == 1 ||
-					card.getID() == 14 ||
-					card.getID() == 16 ||
-					card.getID() == 18 ||
-					card.getID() == 20) {
-				setFaceUp(true);
-			} else {
-				setFaceUp(false);
-			}
-		}
-		if (card instanceof CharacterCard) {
-			setFaceUp(true);
-		}
+        if (card == null) {
+            faceUpImage = new Image("/image/misc/Blank.png");
+        } else {
+            faceUpImage = new Image("/image/" + card.getType().toString().toLowerCase() + "/" + card.getID() + ".png");
+            setFace();
+            if (card.getMainCardImage() != null) {
+                setFaceUp(card.getMainCardImage().isFaceUp());
+            }
+            setRotationAxis(Rotate.Y_AXIS);
+            if (focusable) {
+                setZoomToNode(this);
+            }
+            if (card instanceof RoleCard) {
+                if (card.getID() == 1 ||
+                        card.getID() == 14 ||
+                        card.getID() == 16 ||
+                        card.getID() == 18 ||
+                        card.getID() == 20) {
+                    setFaceUp(true);
+                } else {
+                    setFaceUp(false);
+                }
+            }
+            if (card instanceof CharacterCard) {
+                setFaceUp(true);
+            }
+        }
+
 	}
 
 	/**
@@ -82,7 +87,7 @@ public final class CardImage extends ImageView {
 	 */
 	private void setFace() {
 		if (getRotate() == 180) {
-			setImage(card.getBackImage());
+            setImage(card == null ? new Image("/image/misc/Blank.png") : card.getBackImage());
 			setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
 			faceUp = false;
 		} else {
