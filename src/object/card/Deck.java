@@ -23,7 +23,6 @@ public class Deck extends Group {
 
 	private ObservableList<Card> deckCards;
 	private IntegerProperty deckSize = new SimpleIntegerProperty(0);
-    private CardImage nullCard = new CardImage(null, false);
 
 	public Deck(ObservableList<Card> cards) {
 		Tooltip tooltip = new Tooltip();
@@ -58,15 +57,6 @@ public class Deck extends Group {
 					setCardTranslation();
 				}
 			}
-			deckSize.set(deckCards.size());
-            if (deckSize.get() == 0) {
-                getChildren().add(nullCard);
-            } else {
-                try {
-                    getChildren().remove(nullCard);
-                } catch (Exception ignored) {
-                }
-            }
 		});
 		for (Card card : deckCards) {
 			card.getMainCardImage().setFaceUp(false);
