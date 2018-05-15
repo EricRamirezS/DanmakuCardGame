@@ -6,9 +6,11 @@ import javafx.animation.Timeline;
 import javafx.scene.Group;
 import javafx.util.Duration;
 import object.card.Card;
+import object.card.CardImage;
 import object.card.Deck;
 import object.player.Player;
 import object.scene.Pos;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * DanmakuCG
@@ -72,17 +74,63 @@ class AnimationController {
         return generateReturnable(tl);
     }
 
+    Timeline getFlipCardAnimation(Card card) {
+        CardImage cardImage = card.getMainCardImage();
+        KeyValue kv0 = new KeyValue(cardImage.rotateProperty(), cardImage.getRotate());
+        KeyValue kv1 = new KeyValue(cardImage.rotateProperty(), cardImage.getRotate() - 180);
+        KeyFrame kf0 = new KeyFrame(Duration.ZERO, kv0);
+        KeyFrame kf1 = new KeyFrame(Duration.millis(750), kv1);
+
+        Timeline tl = new Timeline(kf0, kf1);
+        return generateReturnable(tl);
+    }
+
+    Timeline getFlipCardAnimation(CardImage cardImage) {
+        KeyValue kv0 = new KeyValue(cardImage.rotateProperty(), cardImage.getRotate());
+        KeyValue kv1 = new KeyValue(cardImage.rotateProperty(), cardImage.getRotate() - 180);
+        KeyFrame kf0 = new KeyFrame(Duration.ZERO, kv0);
+        KeyFrame kf1 = new KeyFrame(Duration.millis(750), kv1);
+
+        Timeline tl = new Timeline(kf0, kf1);
+        return generateReturnable(tl);
+    }
+
     Timeline getRevealNewIncidentAnimation() {
 
-        Pos IncidentDeckPos = new Pos(gameController.getTableController().getIncidentDeckGroup());
+        Pos incidentDeckPos = new Pos(gameController.getTableController().getIncidentDeckGroup());
+        Card newIncident = gameController.getTableController().getIncidentDeckGroup().getTopCard();
+        gameController.getCurrentIncidentsList().add(newIncident);
+        CardImage image = newIncident.getMainCardImage();
+        Pos newPos = new Pos(image);
+        image.setTranslateX(incidentDeckPos.x - newPos.x);
+        image.setTranslateY(incidentDeckPos.y - newPos.y);
 
+        Timeline flip = getFlipCardAnimation(newIncident);
 
-        Timeline tl = new Timeline();
+        KeyValue kv0x = new KeyValue(image.translateXProperty(), image.getTranslateX());
+        KeyValue kv0y = new KeyValue(image.translateYProperty(), image.getTranslateY());
+        KeyValue kv1x = new KeyValue(image.translateXProperty(), 0);
+        KeyValue kv1y = new KeyValue(image.translateYProperty(), 0);
+
+        KeyFrame kf0 = new KeyFrame(Duration.ZERO, e -> flip.play());
+        KeyFrame kf1 = new KeyFrame(flip.getTotalDuration().add(Duration.millis(125)), kv0x, kv0y);
+        KeyFrame kf2 = new KeyFrame(flip.getTotalDuration().add(Duration.millis(625)), kv1x, kv1y);
+
+        Timeline tl = new Timeline(kf0, kf1, kf2);
 
         return generateReturnable(tl);
     }
 
-    private Timeline generateReturnable(Timeline tl) {
+    void shuffleAnimation(Deck main, Deck Discard) {
+
+    }
+
+    void shuffleAnimation(Deck deck) {
+
+    }
+
+    @NotNull
+    private Timeline generateReturnable(@NotNull Timeline tl) {
         return new Timeline(
                 new KeyFrame(Duration.ZERO, event -> tl.play()),
                 new KeyFrame(tl.getTotalDuration().add(Duration.millis(125)))

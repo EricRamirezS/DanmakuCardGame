@@ -70,14 +70,9 @@ public class TableController {
         if (!gameController.isLunaticExtra()) {
             centerGrid.getChildren().removeAll(leDeckPane, leDiscardDeckPane);
             centerGrid.getColumnConstraints().remove(colLE);
-            for (ColumnConstraints col : centerGrid.getColumnConstraints()) {
-                col.setPercentWidth(100 / 3D);
-                System.out.println(col.toString());
-            }
             GridPane.setColumnIndex(incidentDeckPane, 1);
             GridPane.setColumnIndex(pastIncidentPane, 1);
             GridPane.setColumnIndex(activeIncidentGridPane, 2);
-            colCurrentIncident.minWidthProperty().bind(centerGrid.widthProperty().divide(3));
         } else {
             colCurrentIncident.minWidthProperty().bind(centerGrid.widthProperty().divide(4));
         }
